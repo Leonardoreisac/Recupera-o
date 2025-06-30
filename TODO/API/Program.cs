@@ -28,6 +28,16 @@ app.MapPost("/api/tarefas", async (Tarefa, tarefa, AppDbContext db) =>
 
 );
 
+app.MapGet("/api/tarefa", async (Tarefa, lista, AppDataContext db) =>
+{
+    if (string.ToList(Tarefa.lista))
+    {
+        return Results ("Lista de tarefas geradas com sucesso!");
+    }
+}
+
+);
+
 
 
 
