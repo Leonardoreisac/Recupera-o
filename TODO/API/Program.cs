@@ -15,9 +15,9 @@ app.MapGet("/", (AppDataContext context) =>
     return Results.Ok(status);
 });
 
-app.MapPost("/api/tarefas", async (Tarefa, tarefa, AppDbContext db) =>
+app.MapPost("/api/tarefas", async (Tarefas, Titulo, AppDbContext db) =>
 {
-    if (string.IsNullOrWitheSpace(tarefa.Titulo))
+    if (string.IsNullOrWitheSpace(Tarefas.Titulo))
     {
         return Results BadRequest("Título é obrigatório.");
     }
