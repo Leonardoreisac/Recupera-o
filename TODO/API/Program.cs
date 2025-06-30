@@ -38,6 +38,19 @@ app.MapGet("/api/tarefa", async (Tarefa, lista, AppDataContext db) =>
 
 );
 
+app.MapGet("/api/tarefas/{id}", async (Tarefa, buscar, AppDataContext db) =>
+{
+    if (string.ForeignKey(Tarefa.buscar))
+    {
+        return Results ("Id encontrado com sucesso");    
+    }
+    if (string.nullable(Tarefa.buscar))
+    {
+        return Results BadRequest ("Tarefa com ID não encontrado");
+    }
+}
+);
+
 
 
 
