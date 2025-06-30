@@ -36,7 +36,18 @@ app.MapGet("/api/tarefa", async (Tarefa, lista, AppDataContext db) =>
     }
 }
 
-)
+);
+
+app.MapGet("/api/tarefa", async (Tarefa, lista, AppDataContext db) =>
+{
+    if (string.ToList(Tarefa.lista))
+    {
+        return Results ("Lista de tarefas geradas com sucesso!");
+    }
+}
+
+);
+
 
 
 
